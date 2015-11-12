@@ -1,0 +1,27 @@
+Super Simple Stocks requirements document.
+
+1. The purpose of this document is to summarise the functional requirements of Super Simple Stocks. It is not a 
+   system solution, but a guideline of the required system functionality, software, modules and assumptions. 
+
+2. The Requirements for the functionality of the system are follow:
+   >>calculate the dividend yield provided by Operation module
+   >>calculate the P/E Ratio provided by Operation module
+   >>record a trade, with time stamp, quantity of shares, buy or sell indicator and price provided by Model module
+   >>Calculate Stock Price based on trades recorded in past 15 minutes provided by Operation module
+   >>Calculate the GBCE All Share Index using the geometric mean of prices for all stocks provided by Operation module
+
+3. The Packages/Modules:
+    >>com.trade.processing: Trading calculation, Exchange and Update classes
+    >>com.trade.testing: Test class to verify functional requirements
+    >>com.trade.model: Model classes
+    >>com.trade.Util: Helper classes
+   
+ 4. Software Requirement and step to run test class:
+     >>JDK 7 or later, eclipse Kepler or later version
+     >>Import TradingProject in eclipse and run ApplicationTest class
+    
+ 5. Assumptions:
+    >> It is assumed that ticker price for every stock has 2 values old and current. Initially both the values are Par Values.
+    >> After every 1 minutes, the current ticker price is updated with new random price and old price is replaced with current price.
+    >>Quantity for buy or sell cannot be 0 or less or more than 1000 .
+    >>Price for buy or sell cannot be 0 or less or more than 1000
